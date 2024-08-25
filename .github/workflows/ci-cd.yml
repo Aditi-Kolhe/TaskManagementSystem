@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'zulu'  # This specifies the JDK distribution
+        distribution: 'zulu'  # Specify the JDK distribution
 
     - name: Build with Maven
       run: mvn clean package
@@ -31,6 +31,6 @@ jobs:
     - name: Deploy to Server
       run: |
         echo "Deploying to server..."
-        # Replace the following line with your deployment commands
-        # For example, if you're using SSH to deploy, you can use:
+        # Replace with your actual deployment commands
+        # Example for SSH deployment
         # scp target/your-app.jar user@yourserver:/path/to/deploy/
