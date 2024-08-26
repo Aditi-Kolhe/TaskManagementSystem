@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "ac478cf3-132c-4ce5-801c-fa55a3227d54",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31230523"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"admin123\",\r\n    \"role\": \"ADMIN\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"admin123\",\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjQ1MDUzMjgsImV4cCI6MTcyNTM1MTMyOCwiZW1haWwiOiJhbm9ueW1vdXNVc2VyIiwiYXV0aG9yaXRpZXMiOiJbUk9MRV9BTk9OWU1PVVNdIn0.uERUgD5GcoOuu88tuPta23e6Nz0cu41JxYTFwGPgfA8uk9WyC4aaLrfJCqOoqX6Z",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Implement LMS\",\r\n  \"description\": \"Use .NET Framework\",\r\n  \"status\": \"Completed\",\r\n  \"priority\": \"Medium\",\r\n  \"dueDate\": \"2024-08-30\",\r\n  \"user\": {\r\n    \"id\": 1,\r\n    \"username\": \"User1\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjQ1MDUzMjgsImV4cCI6MTcyNTM1MTMyOCwiZW1haWwiOiJhbm9ueW1vdXNVc2VyIiwiYXV0aG9yaXRpZXMiOiJbUk9MRV9BTk9OWU1PVVNdIn0.uERUgD5GcoOuu88tuPta23e6Nz0cu41JxYTFwGPgfA8uk9WyC4aaLrfJCqOoqX6Z",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjQ1MDUzMjgsImV4cCI6MTcyNTM1MTMyOCwiZW1haWwiOiJhbm9ueW1vdXNVc2VyIiwiYXV0aG9yaXRpZXMiOiJbUk9MRV9BTk9OWU1PVVNdIn0.uERUgD5GcoOuu88tuPta23e6Nz0cu41JxYTFwGPgfA8uk9WyC4aaLrfJCqOoqX6Z",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Task\",\r\n  \"description\": \"Updated description\",\r\n  \"status\": \"In Progress\",\r\n  \"priority\": \"Medium\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjQ1MDUzMjgsImV4cCI6MTcyNTM1MTMyOCwiZW1haWwiOiJhbm9ueW1vdXNVc2VyIiwiYXV0aG9yaXRpZXMiOiJbUk9MRV9BTk9OWU1PVVNdIn0.uERUgD5GcoOuu88tuPta23e6Nz0cu41JxYTFwGPgfA8uk9WyC4aaLrfJCqOoqX6Z",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find task by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjQ1MDUzMjgsImV4cCI6MTcyNTM1MTMyOCwiZW1haWwiOiJhbm9ueW1vdXNVc2VyIiwiYXV0aG9yaXRpZXMiOiJbUk9MRV9BTk9OWU1PVVNdIn0.uERUgD5GcoOuu88tuPta23e6Nz0cu41JxYTFwGPgfA8uk9WyC4aaLrfJCqOoqX6Z",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter and search Task",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjQ1MDUzMjgsImV4cCI6MTcyNTM1MTMyOCwiZW1haWwiOiJhbm9ueW1vdXNVc2VyIiwiYXV0aG9yaXRpZXMiOiJbUk9MRV9BTk9OWU1PVVNdIn0.uERUgD5GcoOuu88tuPta23e6Nz0cu41JxYTFwGPgfA8uk9WyC4aaLrfJCqOoqX6Z",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/filter?searchTitle=Implement LMS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "searchTitle",
+							"value": "Implement LMS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/paginated?page=0&size=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"paginated"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test for retrieving task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test for Filtering and searching",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/tasks/filter?status=Completed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"tasks",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Completed"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
